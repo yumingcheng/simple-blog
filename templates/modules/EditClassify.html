@@ -1,0 +1,19 @@
+<div id="tagdetail" {% if edit_display == False %} style="display:none;" {% end %} >
+
+<ul class="classify-one">
+	<li class="firstChild">
+		 <div class="header" type="classify">
+           <span class="txt">添加文章分类</span>
+           <span class="arrow"></span>
+       </div>
+       <ul class="classify-two" detail="document">     
+           {% for i,clfy in enumerate(Classify) %}                    
+                  <li  {% if i == 0 %} class="select firstChild"  {% else %} class="select" {% end %}index = "{{clfy.id}}" alt="{{clfy.classify}}" title="{{clfy.classify}}" ><span class="ctitle">{{clfy.classify}}</span><span class="cnum">({{clfy.numdoc}})</span></li>
+           {% end %}
+       </ul>
+       </li>
+</ul>
+
+
+</div>
+

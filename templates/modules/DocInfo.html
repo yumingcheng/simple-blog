@@ -1,0 +1,24 @@
+<ul>
+    <li class="feed">
+    <div class="content">
+        <div class="pimg">
+            <a href="" style="color:#FFFFFF"><img src="/static/bafc47281_m.jpg"/></a>
+        </div> 
+        <div class="pauthor">
+            <a href="">{{info_doc.name}}</a>
+        </div>
+        <div class="pdoc">
+            <div class="ptitle">
+                <a href={{"/document/"+str(info_doc.id)}}>{{info_doc.title}}</a>
+            </div>
+            <div class="pcontent">
+                {{info_doc.abstract}}                
+            </div> 
+        </div>
+    </div>
+    <div class="bottom">
+        <a href="javascript:;" class="kpro" id = "{{info_doc.id}}"><i class="spro"></i>关注问题</a>
+        <!-- <a href="javascript:;" class="kping" id = "{{info_doc.id}}"><i class="sping"></i><span>{{info_doc.id}}</span>条评论</a> -->
+    </div>                              
+    </li>
+</ul>

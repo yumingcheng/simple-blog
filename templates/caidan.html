@@ -1,0 +1,108 @@
+CTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>简洁的纯CSS下拉菜单代码</title>
+<style>
+#sddm
+{   margin: 0 auto;
+    padding: 0;
+    z-index: 30;
+    background-color:#F4F4F4;
+    width: 480px;
+    height:23px;}
+
+#sddm li
+{   margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    font: bold 12px arial}
+
+#sddm li a
+{   display: block;
+    margin: 0 1px 0 0;
+    padding: 4px 10px;
+    width: 60px;
+    background: #5970B2;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none}
+
+#sddm li a:hover
+{   background: #49A3FF}
+
+#sddm div
+{   position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #EAEBD8;
+    border: 1px solid #5970B2}
+
+    #sddm div a
+    {   position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        background: #EAEBD8;
+        color: #2875DE;
+        font: 12px arial}
+
+    #sddm div a:hover
+    {   background: #49A3FF;
+        color: #FFF
+    }
+</style>
+
+</head>
+
+<body style="text-align:center">
+
+<ul id="sddm">
+    <li><a href="#" onmouseover="mopen('m1')" onmouseout="mclosetime()">Home</a>
+        <div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="#">HTML DropDown</a>
+        <a href="#">DHTML DropDown menu</a>
+        <a href="#">JavaScript DropDown</a>
+        <a href="#">DropDown Menu</a>
+        <a href="#">CSS DropDown</a>
+        </div>
+    </li>
+    <li><a href="#" onmouseover="mopen('m2')" onmouseout="mclosetime()">Download</a>
+        <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="#">ASP Dropdown</a>
+        <a href="#">Pulldown menu</a>
+        <a href="#">AJAX dropdown</a>
+        <a href="#">DIV dropdown</a>
+        </div>
+    </li>
+    <li><a href="#" onmouseover="mopen('m3')" onmouseout="mclosetime()">Order</a>
+        <div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="#">Visa Credit Card</a>
+        <a href="#">Paypal</a>
+        </div>
+    </li>
+    <li><a href="#" onmouseover="mopen('m4')" onmouseout="mclosetime()">Help</a>
+        <div id="m4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="#">Download Help File</a>
+        <a href="#">Read online</a>
+        </div>
+    </li>
+    <li><a href="#" onmouseover="mopen('m5')" onmouseout="mclosetime()">Contact</a>
+        <div id="m5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        <a href="#">E-mail</a>
+        <a href="#">Submit Request Form</a>
+        <a href="http://www.codefans.net/" target="_blank">codefans.net</a>
+        </div>
+    </li>
+</ul>
+<div style="clear:both"></div>
+<!--广告区域结束--> 
+</body>
+</html>
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>sublime text </title>
+    <link rel="stylesheet" href="{{static_url("main.css")}}" type="text/css">
+    <link href="{{static_url("jquery-ui-1.11.0.custom/jquery-ui.css")}}" rel="stylesheet">
+	<script type="text/javascript" src="{{static_url("jquery.js")}}"></script>
+	<script type="text/javascript" src="{{static_url("jquery-ui-1.11.0.custom/jquery-ui.js")}}"></script>	
+	<script type="text/javascript" src="{{static_url("search.js")}}"></script>	  
+	<!--<script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>-->
+</head>
+<body>
+			
+			<!-- 顶部开始 -->
+			<div id="top">
+				<!-- 顶部中间具体框架开始 -->
+                <div id="top_center">
+                    <div class="logo"> 
+                        <img src="{{static_url("11.png")}}" alt="logo">
+                    </div>
+					<!-- 搜索框开始 -->
+					<div class="top_serach">
+							<form action="/keyword/s" method="get" class="searchinfo">
+								<input type="text" maxlength="255" value=""  name="wd" class="keyword ui-autocomplete-input  ui-corner-all"></input>
+								<input type="submit" value="搜索" class="searchbutton"></input>
+							</form>
+					</div>
+					<!-- 搜索框结束 -->
+					<div class="top_link">
+						<a href="/main">首页</a><a href="/">主题</a><a href="/">其他</a>
+					</div>
+					<div class = "top_log">
+						<a href="">登录</a>
+						<a href="">注册</a>
+					</div>
+					
+			<!-- 		<div class="top_person">
+						<ul id="top_menu">
+					    	<li><a href="#" onmouseover="mopen('m1')" onmouseout="mclosetime()">程钰茗</a>
+        					<div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+        						<a href="/people/12121">个人主页</a>
+        						<a href="#">个性定制</a>
+        						<a href="#">退出</a>
+        					</div>
+    						</li>
+					</ul>
+					</div>	 -->						
+				</div>
+				<!-- 顶部中间具体框架结束 -->								
+			</div>
+			
+			<!-- 顶部结束 -->
+
+			<!-- 中间内容开始 -->
+			<div id="detail">
+				<!-- 左边list文章详情 -->
+				<div id="listinfo">
+					<!-- 文章开头 -->
+					<div class="listtitle">
+						<i class="stit"></i>
+						<span class="gtit" id = "gtit">最新动态</span>
+						<a><i class="gshe"></i><span class="sshe">设置</span></a>
+					</div>
+					<!-- 文章开头结束 -->
+					<!-- 内容开始 -->
+					<div id="listcontent">
+						<div id="my_doc_0" class="select_content">
+						<ul>
+							<li class="feed">
+							<div class="content">
+								<div class="pimg">
+                                    <a href="" style="color:#FFFFFF"> <img src="{{static_url("bafc47281_m.jpg")}}"/></a>
+								</div> 	
+								<div class="pauthor">
+									<a href="">程玉明</a>
+								</div>
+								<div class="pdoc">
+									<div class="ptitle">
+										<a href="">除了「deadline 紧」以外，程序员还有什么借口可以让自己写出低质量的代码？</a>
+									</div>
+									<div class="pcontent">
+										阿娇是路口附近啊啥快乐到家罚款了单border: 2px solid purple;border: 2px solid purple;border: 2px solid purple;border: 2px solid purple;border: 2px solid purple;
+									</div> 
+								</div>
+							</div>
+							<div class="bottom">
+									<a href=""><i class="spro"></i>关注问题</a>
+									<a href=""><i class="sping"></i><span>18</span>条评论</a>
+							</div>								
+							</li>
+						</ul>
+						</div>
+						<div id="my_doc_1" class="select_content">
+						<ul>
+							<li class="feed">
+							<div class="content">
+								<div class="pimg">
+                                    <a href="" style="color:#FFFFFF"> <img src="{{static_url("bafc47281_m.jpg")}}"/></a>
+								</div> 
+								<div class="pauthor">
+									<a href="">程玉明</a>
+								</div>
+								<div class="pdoc">
+									<div class="ptitle">
+										<a href="">除了「deadline 紧」以外，程序员还有什么借口可以让自己写出低质量的代码？</a>
+									</div>
+									<div class="pcontent">
+										阿娇是路口附近啊啥快乐到家罚款了单border: 2px solid purple;border: 2px solid purple;border: 2px solid purple;border: 2px solid purple;border: 2px solid purple;
+									</div> 
+								</div>
+							</div>
+							<div class="bottom">
+									<a href=""><i class="fpro"></i>关注问题</a>
+									<a href=""><i class="fping"></i><span>18</span>条评论</a>
+							</div>								
+							</li>
+						</ul>
+						</div>
+						<div id= "follow_people"  class="select_content"></div>
+						<div id="follow_question" class="select_content" ></div>
+						<div id="hot_doc" class= "select_content"></div>	
+					</div>
+					<!-- 更多按钮 -->
+					<div id="forMore">
+							<span>更&nbsp; &nbsp; 多<span>
+					</div>
+					<!-- 内容结束-->
+				</div>
+				<!-- 左边list文章详情结束 -->
+				
+				<!-- 右边list标签 -->
+				<div id="listtag">
+					<div class="clock">
+						<img src="{{static_url("biaopan.png")}}" alt="" id="biaopan">
+						<img src="{{static_url("shi.png")}}" alt=""	id="shi">
+						<img src="{{static_url("fen.png")}}" alt=""	id="fen">
+						<img src="{{static_url("miao.png")}}" alt="" id="miao">
+					</div>	
+		    		<script type="text/javascript" src="{{static_url("jquery.rotate.min.js")}}"></script>
+		    		<script type="text/javascript" src="{{static_url("72.js")}}"></script>
+					<div class="content">
+						<ul class="menu-one">
+							<li class="firstChild">
+								<div class="header">
+									<span class="txt" title= "123123">一、我的文章</span>
+									<span class="arrow"></span>
+								</div>
+								<ul class="menu-two">
+									<li class="firstChild"><span class="select my_doc" index= "0" alt="这是提示" title="这是火狐使用的提示" >HTML5基础教程0111111111</span></li>
+									<li><span class= "select my_doc" index="1">HTML5基础教程0222222222</span></li>
+									<li><span class= "select my_doc" index="2">HTML5基础教程0222222222</span></li>
+									<li><span class= "select my_doc" index="3">HTML5基础教程0222222222</span></li>
+									<li><span class= "select my_doc" index="4">HTML5基础教程0222222222</span></li>
+								</ul>
+							</li>
+							<li>
+								<div class="header">
+									<span class="txt">二、我关注的人</span>
+									<span class="arrow"></span>
+								</div>
+								<ul class="menu-two">			
+								</ul>
+							</li>
+							<li>
+								<div class="header">
+									<span class="txt">三、我关注的文章</span>
+									<span class="arrow"></span>
+								</div>
+								<ul class="menu-two">
+									<li class="firstChild"><span class= "select follow_question">HTML5基础教程0222222222</span></li>
+									<li><span class= "select">HTML5基础教程0222222222</span></li>
+									<li><span class= "select">HTML5基础教程0222222222</span></li>
+									<li><span class= "select">HTML5基础教程0222222222</span></li>
+								</ul>
+							</li>
+							<li>
+								<div class="header">
+									<span class="txt">四、热点文章推荐</span>
+									<span class="arrow"></span>
+								</div>
+								<ul class="menu-two">
+									<li class="firstChild"><span class= "select hot_doc">HTML5基础教程0222222222</span></li>
+									<li><span class= "select">HTML5基础教程0222222222</span></li>
+									<li><span class= "select">HTML5基础教程0222222222</span></li>
+									<li><span class= "select">HTML5基础教程0222222222</span></li>
+								</ul>
+							</li>
+							<li>
+								<div class="header">
+									<span class="txt">五、添加文章</span>
+									<span class="arrow"></span>
+								</div>
+								<ul class="menu-two">								
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				
+				<!-- 右边list标签结束 -->
+			</div>
+ 			<!-- 中间内容结束 -->		
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block bodytop %}
+{%end%}
+
+{% block bodyleft %}
+<!-- 文章开头 -->
+<div class="listtitle">
+    <i class="stit"></i>
+    <span id="gtit">热点文章推荐</span>
+</div>
+<!-- 文章开头结束 -->
+<!-- 内容开始 -->
+<div id="listcontent">
+    {% module InfoListUI(content_type,info) %}
+</div>
+<!-- 更多按钮 -->
+<div id="forMore" page="1" type="hot_doc" {% if hasnext == 0 %} style="display:none" {% end %}>
+    <span>更&nbsp; &nbsp; 多<span>
+</div>
+<!-- 内容结束-->
+<!-- 左边list文章详情结束 -->
+{% end %}
+
+{% block bodyright %}
+<div>
+    {% module ClockUI() %}
+</div>
+<div class="content">
+      <ul class="menu-one">
+            <li class="firstChild">
+            <div class="header" type="hot_doc">
+           <span class="txt" >一、热点文章推荐</span>
+       </div>
+       <ul class="menu-two"></ul>
+       </li>
+       <li>
+       <div class="header" type="hot_author">
+           <span class="txt">二、热点作者推荐</span>
+       </div>
+       <ul class="menu-two"></ul>
+       </li>
+      </ul>
+</div>
+{% end %}
+
+

@@ -1,0 +1,10 @@
+{% if content_type == "doc" %}
+    {% for DInfo in info %}
+        {% module DocInfoUI(DInfo) %}
+    {% end %}
+{% elif content_type == "person" %}
+    {% for i,PInfo in enumerate(info) %} 
+        {% module PersonInfoUI(PInfo) %}
+    {% end %}
+{% end %}
+

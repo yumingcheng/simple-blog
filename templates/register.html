@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="{{static_url("login.css")}}"/>
+	<script type="text/javascript" src="{{static_url("jquery.js")}}"></script>
+	<script type="text/javascript" src="{{static_url("jquery.validate.js")}}"></script>
+</head>
+
+<body id="login_body">
+
+	<div class="login_wrapper">
+		<div class="login_header">
+			<img src="/static/11.png?v=57261" alt="logo">
+		</div>
+		<div class="login_box">
+            <form id="loginForm" autocomplete="off">
+            	<input type="text" id="nickname" name="nickname" tabindex="1" placeholder="昵称">
+            	<input type="text" id="email" name="email" tabindex="2" placeholder="邮箱">
+                <input type="password" id="password" name="password" tabindex="3" placeholder="密码">
+                <div id="result"></div>
+                <input type="submit" id="submitLogin" value="注 &nbsp; &nbsp;册">
+			</form>
+			<div class="login_right">
+				<div>已经有maoYe帐号？</div>
+				<a href="/auth/login" class="login_now">直接登录</a>
+			    <div>不想注册直接访问？</div>
+			    <a href="/" class="look_now">立即访问</a>
+			</div>
+        </div>
+	</div> 	
+	<script type="text/javascript">
+	$(function(){
+		$('#email,#password','#nickname').focus(function(){
+   			$('#result').text('').hide();
+   		}); 
+		function immediately(){
+			var element = document.getElementById("password");
+			if("\v"=="v") {
+				element.onpropertychange = webChange;
+			}else{
+				element.addEventListener("input",webChange,false);//此时的input为添加的oninput事件
+			}
+			function webChange(){
+				$('#result').text('').hide();
+			}
+		}
+		immediately();
+		//验证表单
+		$("#loginForm").validate({
+	        rules: {
+	        	nickname:{
+	        		required:true,
+	        		maxlength:10
+	        	},
+	    	   	email: {
+	    	    	required: true,
+	    	    	email: true,
+	    	    	maxlength:100
+	    	   	},
+	    	   	password: {
+	    	    	required: true,
+	    	    	rangelength: [6,16]
+	    	   	}
+	    	},
+	    	messages: {
+	    		nickname:{
+	    			required:"请输入用户名",
+	    			maxlength:"请输入10字以内的用户名"
+	    		},
+	    	   	email: {
+	    	    	required: "请输入登录邮箱地址",
+	    	    	email: "请输入有效的邮箱地址，如：xxxxx@163.com",
+	    	    	maxlength:"请输入100字以内的邮箱地址"
+	    	   	},
+	    	   	password: {
+	    	    	required: "请输入密码",
+	    	    	rangelength: "请输入6-16位密码，字母区分大小写"
+	    	   	}
+	    	},
+	    	submitHandler:function(form){	  	    	
+	      		$(form).find(":submit").attr("disabled", true);
+				$.ajax({
+					cache: false,
+					type: "POST",
+					url:"/auth/register",
+					data:$('#loginForm').serialize(),// 你的formid
+					async: false,
+			    	error: function(request) {
+				        alert("Connection error");
+			    	},
+			    	success: function(data) {
+			    		if(data == '1'){
+	                    	window.location.href = "/"
+    	            	}
+                		else if(data == '0'){
+		                    $('#result').html('注册失败,邮箱或用户名已被注册！');
+		                    $('#result').text(result.msg).show();		                    
+                		}
+                		else{
+                   			$('#result').html(data);  
+	                	}
+	                	$(form).find(":submit").attr("disabled", false);
+    	            }
+				});
+			}
+		});
+});
+</script>
+</body>
+</html>

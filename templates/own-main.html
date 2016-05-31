@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block bodytop %}
+{%end%}
+
+{% block bodyleft %}
+<!-- 文章开头 -->
+<div class="listtitle">
+    <i class="stit"></i>
+    <span id="gtit">热点文章推荐</span>
+</div>
+<!-- 文章开头结束 -->
+<!-- 内容开始 -->
+<div id="listcontent">
+    {% module InfoListUI(content_type,info) %}
+
+</div>
+<!-- 更多按钮 -->
+<div id="forMore" page="1" type="hot_doc" {% if hasnext == 0 %} style="display:none" {% end %}>
+    <span>更&nbsp; &nbsp; 多<span>
+</div>
+<!-- 内容结束-->
+{% end %}
+
+{% block bodyright %}
+<div>
+    {% module ClockUI() %}
+</div>
+<div class="content">
+   <ul class="menu-one">
+       <li class="firstChild">
+       <div class="header" type="hot_doc">
+           <span class="txt" >一、热点文章推荐</span>
+       </div>
+       <ul class="menu-two"></ul>
+       </li>
+       <li>
+       <div class="header" type="hot_author">
+           <span class="txt">二、热点作者推荐</span>
+       </div>
+       <ul class="menu-two"></ul>
+       </li>
+       <li>
+       <div class="header"  type="my_doc" >
+           <span class="txt">三、我的文章</span>
+       </div>
+       <ul class="menu-two" detail="document">
+           <li class="firstChild select" alt="全部文章" title="全部文章" index="-1" ><span class="ctitle">全部文章</span><span class="cnum">({{sum([a['numdoc'] for a in Classify])}})</span>
+           </li>
+           {% for i,clfy in enumerate(Classify) %}
+                    <li class= "select" index = "{{clfy.id}}" alt="{{clfy.classify}}" title="{{clfy.classify}}" ><span class="ctitle">{{clfy.classify}}</span><span class="cnum">({{clfy.numdoc}})</span></li>
+           {% end %}
+       </ul>
+       </li>
+       <li>
+       <div class="header" type="my_collect_doc">
+           <span class="txt">四、我收藏的文章</span>
+       </div>
+       <ul class="menu-two"></ul>
+       </li>
+       <li>
+       <div class="header" type="my_follow_author">
+           <span class="txt">五、我关注的作者</span>
+       </div>
+       <ul class="menu-two"></ul>
+       </li>
+       <li>
+       <div class="header" type="insert_new_doc">
+           <span class="txt">六、添加新文章</span>
+           <!-- <a href="/insert/document">六、添加新文章</a> -->
+       </div>
+       <ul class="menu-two"></ul>
+       </li>
+   </ul>
+</div>
+{% end %}

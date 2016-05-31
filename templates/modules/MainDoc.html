@@ -1,0 +1,23 @@
+<div id="docinfo">
+	<div id="dhead">
+		   	<div id="dtitle"  class="fortitle" docid="{{ docDetail.id }}"><span>{{ docDetail.title }}</span></div>
+            <!-- <div id="edittag"><div id="eclassify"><span>全部文章全部文章全部文章全部文章</span></div></div> -->
+   			<div id="dmeta">
+    			    <span class="ptag"><a href="#"><i class="icon-list-alt icon12"></i>{% if docDetail.categoryDetail == None %}全部文章{%else%} {{docDetail.categoryDetail.classify}} {%end%}</a></span>
+    			    <span class="ptag"><i class="icon-user icon12"></i><a href="#">{{docDetail.name}}</a></span>
+    			    <span class="ptag"><i class="ico icon-time icon12"></i>{{docDetail.published}}</span>
+        			<!-- <span class="ptag"><i class="ico icon-eye-open icon12"></i>430浏览</span> -->
+    			    <!-- <span class="ptag"><i class="icon-comment icon12"></i><a href="">0评论</a></span> -->
+     		</div>
+	</div>
+    <div id="dcontent">
+        {% raw docDetail.html %}
+    </div>
+    <div id="dbuttonbox">
+    {% if allow_edit %}
+        <div><button id= "edit-content" class="button blue">编辑文章</button></div>
+        <div><button id= "delete-content" class="button blue">删除文章</button> </div>
+
+    {% end%}
+    </div>
+</div>

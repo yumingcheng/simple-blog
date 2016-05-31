@@ -1,0 +1,15 @@
+<div id="editinfo" {% if edit_type == 'modify' %}  style="display: none;" {% end %}>
+    <div id= "etitle" class="fortitle"><input type="text" autocomplete="off" placeholder="请添加标题" maxlength="255"></div>
+    <div id="edittag"><div id="eclassify" index= "{{index}}" ><span>未分类</span></div></div>
+    <div id="econtent" style="height:400px;width:700px;"></div> 
+    <div id="buttonbox">               	
+    {% if edit_type == 'modify' %}
+        <div><button id= "save-modify" class= "button blue">保存修改</button></div>
+        <div><button id= "gave-up-modify" class= "button blue">放弃修改</button> </div>
+    {% elif edit_type == 'insert'%}
+        <div><button id= "save-insert" class= "button blue">保&nbsp;存</button></div>
+        <div><button id= "gave-up-insert" class= "button blue">放&nbsp;弃</button></div>
+    {% end %}
+    </div>
+
+</div>

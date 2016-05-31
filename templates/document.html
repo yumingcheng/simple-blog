@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block bodytop %}
+<link rel="stylesheet" href="{{static_url("ueditor/themes/default/css/ueditor.css")}}" type="text/css">  
+<script type="text/javascript" charset="utf-8" src="{{static_url("ueditor/ueditor.config.js")}}"></script>
+<script type="text/javascript" charset="utf-8" src="{{static_url("ueditor/ueditor.all.js")}}"> </script>
+<script type="text/javascript" charset="utf-8" src="{{static_url("ueditor/ueditor.parse.js")}}"> </script>
+<div id="enewClassify" style="display:none;">
+	  <div id = "ebg" ></div>
+        <div id="dialogContent">    
+        		<div class="dnewname">新建类名</div>
+        		<input type="text" class="dinputName" id="digName"></input>
+        		<div class="derror" style="visibility:hidden">笔记本的名称不能多于100个字符。</div>          	
+        		<div class="buttonbox">
+        			<button type="button" class="gwt-Button" id="cls-Save">保存</button>
+        			<button type="button" class="gwt-Button" id="cls-Cancel">取消</button>
+        		</div>
+        </div>
+</div>
+{% end %}
+{% block bodyleft %}
+<script type="text/javascript" charset="utf-8" src="{{static_url("document.js")}}"></script>
+{% module MainDocUI(docDetail,allow_edit) %}
+{% if allow_edit == True %}
+	{% module EditDocUI(edit_type,index) %}
+{% end %}
+<script type="text/javascript">
+uParse('#dcontent', {
+    rootPath: '/static/ueditor'
+})
+</script>
+{%end%}
+{% block bodyright %}
+    {% module ClockUI() %}
+    {% if allow_edit == True %}
+    	{% module EditClassifyUI(Classify,False) %}
+    {% end%}
+{% end %}
+
+
+
+
